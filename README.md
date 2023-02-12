@@ -29,4 +29,4 @@
 
 ## Автор
 
-- [@Vlad Mironov](https://github.com/vv-m/)
+- [@Vlad Mironov](https://t.me/LR_STUDIO)
