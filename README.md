@@ -1,15 +1,30 @@
-# Getting Started with Create React App
+# whatsapp-start.com (frontend)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Описание проекта
 
-## Available Scripts
+Проект позволяет отправлять сообщения на WhatsApp не добавляя 
+телефон получателя в контакты. 
 
-In the project directory, you can run:
+Для зарегистрированных пользователей предусмотрены шаблоны сообщений.
+
+
+## Запуск проекта 🚀
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Технологии
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+#### Использованные библиотеки:
+
+* [REACT](https://ru.reactjs.org/)
+* [Axios](https://www.npmjs.com/package/axios)
+* [MUI](https://mui.com/material-ui/getting-started/overview/)
+* [React-Phone-Input-2](https://www.npmjs.com/package/react-phone-input-2)
+
+#### Фреймворки:
+
+* Django==2.2.19
+
+## Автор
+
+- [@Vlad Mironov](https://github.com/vv-m/)

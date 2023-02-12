@@ -14,7 +14,7 @@ import Login from "./components/auth/login";
 import RemindPassword from "./components/auth/remind_password";
 import Thanks from "./components/auth/thanks";
 import Footer from "./components/footer";
-import EditTemplate from "./components/edit_template";
+import TemplateEdit from "./components/edit_template";
 import playground from "./components/playground";
 import AddTemplate from "./components/add_template";
 import ChangePassword from "./components/auth/change_password";
@@ -78,7 +78,7 @@ export default function App() {
                             <Route path="/login" element={<Login/>}/>
                             <Route path="/thanks" element={<Thanks/>}/>
                             <Route path="/paste" element={<playground/>}/>
-                            <Route path="/edit_template" element={<EditTemplate/>}/>
+                            <Route path="/edit_template/:idTemplate" element={<TemplateEdit/>}/>
                             <Route path="/remind_password" element={<RemindPassword/>}/>
                             <Route path="/activation_profile" element={<ActivationProfile/>}/>
                             <Route path="/add_template" element={<AddTemplate/>}/>

@@ -16,9 +16,10 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogActions from "@mui/material/DialogActions";
 import Dialog from "@mui/material/Dialog";
+import {useParams} from "react-router";
 
 
-function EditTemplate() {
+function TemplateEdit() {
     // Title страницы
     useEffect(() => {
         document.title = 'Редактирование шаблона сообщения - whatsapp-start.com'
@@ -33,6 +34,8 @@ function EditTemplate() {
         setOpen(false)
     };
 
+    const {idTemplate} = useParams()
+
     const [templatesMsg, getTemplatesMsg] = useState([]);
 
     // Для прелоудера
@@ -41,11 +44,11 @@ function EditTemplate() {
     const label = "Использовать по умолчанию"
 
     // Адреса на локалке
-    // const url_get = 'http://127.0.0.1:8000/api/v1/users/2/templates/'
-    // const url_post = 'http://127.0.0.1:8000/api/v1/users/2/templates/'
+    const url_get = 'http://127.0.0.1:8000/api/v1/users/2/templates/' + idTemplate
+    const url_post = 'http://127.0.0.1:8000/api/v1/users/2/templates/'
 
     // Адреса на проде
-    const url_get = 'http://92.51.24.66:3007/api/v1/users/2/templates/4'
+    // const url_get = 'http://92.51.24.66:3007/api/v1/users/2/templates/4'
     // const url_post = 'http://92.51.24.66:3007/api/v1/users/2/templates/'
 
     // let token = 'Bearer '
@@ -70,20 +73,7 @@ function EditTemplate() {
             })
     }, [])
 
-
-    // let data = new FormData();
-    // data.append("text", "шаблон из реакта");
-    // function CreateTemplate(){
-    //     fetch(url_post, {
-    //         method: "POST", // POST, PUT, DELETE, etc.
-    //         headers: {"Authorization": token},
-    //         body: data
-    //     })
-    //         .then(response => response.json())
-    //         .then(console.log)
-    //         .catch(console.error)
-    // }
-
+    console.log(templatesMsg)
 
     return (<>
         {loading === false ? (<>
@@ -165,4 +155,4 @@ function EditTemplate() {
     </>);
 }
 
-export default EditTemplate;
+export default TemplateEdit;

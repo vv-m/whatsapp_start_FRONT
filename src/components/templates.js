@@ -16,6 +16,7 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogActions from "@mui/material/DialogActions";
 import Dialog from "@mui/material/Dialog";
+import {useParams} from "react-router";
 
 function TemplatesMessages() {
     // Title страницы
@@ -24,7 +25,7 @@ function TemplatesMessages() {
     })
 
     // Pop-up окно
-    const [open, setOpen] = React.useState(false);
+    const [open, setOpen] = useState(false);
     const handleClickOpen = () => {
         setOpen(true)
     };
@@ -32,9 +33,11 @@ function TemplatesMessages() {
         setOpen(false)
     };
 
+    // const [urlTemplate, setUrlTemplate] = useState([]);
+
     // Эндпоинты для запросов
-    const url_get = 'http://92.51.24.66:3007/api/v1/users/2/templates/'
-    const url_post = 'http://92.51.24.66:3007/api/v1/users/2/templates/'
+    const url_get = 'http://127.0.0.1:8000/api/v1/users/2/templates/'
+    const url_post = 'http://127.0.0.1:8000/api/v1/users/2/templates/'
     let token = 'Bearer '
 
     // Добавляем Local Storage ключ "token"
@@ -93,7 +96,7 @@ function TemplatesMessages() {
                         display: 'flex', flexDirection: 'column'
                     }}>
                         <h4>Шаблон "{item.name}"</h4>
-                        <Link href="/edit_template" underline="none">
+                        <Link href={'/edit_template/'+ item.id} underline="none">
                             <TextField
                                 disabled
                                 sx={{
@@ -104,9 +107,8 @@ function TemplatesMessages() {
                                 label="Сообщение"
                                 multiline
                                 rows={3}
-                                defaultValue={item.text}
-                            /><
-                        /Link>
+                                defaultValue={item.text}/>
+                        </Link>
                         <Box style={edit_button}>
                             <PanoramaFishEyeSharpIcon style={icons}
                                                       color={'black'}/>
